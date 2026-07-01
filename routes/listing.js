@@ -18,9 +18,12 @@ router
     validateListing,
     wrapAsync(listingcontroller.createListing)
   );
-
+  
+  router.get("/search", wrapAsync(listingcontroller.searchByLocation));
+  
 //New Route
 router.get("/new", isLoggedIn, listingcontroller.renderNewForm);
+
 
 router
   .route("/:id")
